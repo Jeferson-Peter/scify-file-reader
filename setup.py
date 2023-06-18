@@ -8,7 +8,7 @@ with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     LONG_DESCRIPTION = "\n" + fh.read()
 
 VERSION = __version__
-DESCRIPTION = 'A class to handle multiple same files in the same directory'
+DESCRIPTION = 'A class to handle and process multiple files with identical structures within a directory.'
 
 setup(
     name="scify-file-reader",

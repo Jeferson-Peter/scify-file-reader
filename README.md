@@ -74,9 +74,9 @@ OUTPUT: print(data)
 ```
 
 ### Concatenating patterns:
-Use this method when you want to concatenate multiple files as one's based on the pattern.
+Use this method when you need to concatenate multiple files with similar patterns into a single consolidated file.
 
-**E.g.** In the last example we have 9 files on the same directory, with common patterns, such as 'file', 'log' and 'test'. Why do not join them? Let's see the example
+**E.g.** In the last example, we demonstrate the use of scify-file-reader with a directory containing 9 files that follow common naming patterns, such as 'file', 'log', and 'test'. By joining these files, we can consolidate and analyze their data more effectively. Let's take a look at the example to understand how they are joined.
 
 ```python
 from scify_file_reader import FileReader
@@ -84,7 +84,7 @@ from scify_file_reader import FileReader
 PATH = '/path/to/directory'
 
 """
-# Supomos que temos estes arquivos dentro do nosso diretório
+# Let's suppose we have these files inside our directory.
 print(os.listdir(PATH))
 # OUT: ['file_1.csv'', 'log_2.csv', 'test_3.csv',
         'file_%Y%m%d%H%M%S.csv', 'log_%Y%m%d%H%M%S.csv', 'test_%Y%m%d%H%M%S.csv', 
@@ -107,9 +107,9 @@ OUTPUT: print(data)
 
 ### Using a specific regular expression
 
-What happens in the example above is that all common files prefixes was joined together such as `file_1.csv`, `file_%Y%m%d%H%M%S.csv`, `file_%Y%m%d_%H%M%S.csv` are now `file` key on the output.  
+In the example above, all files with common prefixes, such as `file_1.csv`, `file_%Y%m%d%H%M%S.csv`, and `file_%Y%m%d_%H%M%S.csv`, were joined together under the file key in the output.  
 
-If you want to use a specific regular expression for your files, you can do the following:
+If you want to use a specific regular expression for filtering your files, you can follow these steps:
 
 ```python
 from scify_file_reader import FileReader
@@ -129,7 +129,7 @@ By default the regular expression is `^([A-Z]+)_\d+`.
 
 ### Speficic prefixes instead of regular expressions
 
-If you want to use specific prefixes instead of regular expressions you can use the `join_custom_prefixes` argument that requers a tuple.
+If you prefer to use specific prefixes instead of regular expressions, you can utilize the `join_custom_prefixes` argument. This argument accepts a tuple of prefixes that you want to join together.
 
 ```python
 from scify_file_reader import FileReader

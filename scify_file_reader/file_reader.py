@@ -113,7 +113,3 @@ class FileReader:
             return data
         else:
             return data
-
-
-reader = FileReader('/path/to/directory')
-data = reader.read_files(join_prefixes=True) #
